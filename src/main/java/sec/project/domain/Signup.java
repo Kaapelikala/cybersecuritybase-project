@@ -7,16 +7,27 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 public class Signup extends AbstractPersistable<Long> {
 
     private String name;
-    private String address;
+    private String password;
+    private String sessionCode;
+
 
     public Signup() {
         super();
     }
 
-    public Signup(String name, String address) {
+    public Signup(String name, String password) {
         this();
         this.name = name;
-        this.address = address;
+        this.password = password;
+        this.sessionCode=name+password;
+    }
+
+    public String getSessionCode() {
+        return sessionCode;
+    }
+
+    public void setSessionCode(String sessionCode) {
+        this.sessionCode = sessionCode;
     }
 
     public String getName() {
@@ -27,12 +38,12 @@ public class Signup extends AbstractPersistable<Long> {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }

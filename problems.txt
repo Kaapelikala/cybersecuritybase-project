@@ -1,0 +1,15 @@
+This project is a rather crappy password storage system. It seems to have a couple of problems:
+
+1) All data is actually stored in plain text sqlite database(usernames, passwords, webaddresses)
+2) Which actually is available in a URL on the server. Because of reasons.
+3) You actually can login by using sql injection. That's not even the worst thing, though.
+4) XSS is also a thing, apparently.
+5) No validation whatsoever in the whole thing.
+
+
+Apparently this program suffers from SQL injections: You can login as anyone by using Password = "a' or '1'='1"
+Apparently someone forgot to remove the debug page "/check". It seems to leak EVERYTHING just like that.
+Even if that wasn't a problem, the fact that the software uses a plaintext SQLITE database doesn't help...
+XSS attacks seem to work both in the debug page as well as in the
+Also, as long as we are running without SSL, anyone can steal the cookies and use them as it seems that someone was too lazy to actually implement a useful logout function...
+Because CSRF had caused some problems, someone actually disabled it. Easiest way to fix problems with security is to disable security...

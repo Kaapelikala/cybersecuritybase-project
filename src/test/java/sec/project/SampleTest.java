@@ -34,9 +34,9 @@ public class SampleTest {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(webAppContext).build();
     }
 
-    @Test
+   /* @Test
     public void signupAddsDataToDatabase() throws Throwable {
         mockMvc.perform(post("/form").param("name", "Testname").param("address", "Testaddress")).andReturn();
         assertEquals(1L, signupRepository.findAll().stream().filter(s -> s.getName().equals("Testname") && s.getAddress().equals("Testaddress")).count());
-    }
+    }*/
 }
