@@ -1,0 +1,3 @@
+Startup is the same as the template project.
+
+Once the project is running, possibly at localhost:8080, run localhost:8080/setup to create tables and example data for the software.
